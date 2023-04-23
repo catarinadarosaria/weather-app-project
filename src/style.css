@@ -123,10 +123,10 @@ a:visited {
 }
 .gitLink {
   text-decoration: none;
-  color: rgb(125, 162, 177);
   cursor: pointer;
 }
 .myWebsite {
   text-decoration: none;
+  color: rgb(125, 162, 177);
   cursor: pointer;
 }
