@@ -1,0 +1,123 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: rgb(234, 249, 250);
+  max-width: 800px;
+  margin: 0 auto;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+.weather-app {
+  background-color: white;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 60px auto;
+  max-width: 100%;
+  border: 1px solid rgb(223, 216, 216);
+  border-radius: 10px;
+  padding: 40px 60px 60px 60px;
+}
+.weather-info {
+  margin-top: 40px;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+h2 {
+  font-size: 80px;
+  text-align: right;
+}
+h3 {
+  font-size: 16px;
+  margin-top: 50px;
+  margin-bottom: 2px;
+  text-transform: capitalize;
+}
+
+.week-data {
+  text-align: center;
+}
+.week-day {
+  font-size: 14px;
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+.daily-temperature {
+  padding-top: 5px;
+  font-size: 11px;
+}
+
+.current-weather img {
+  width: 100%;
+  padding-bottom: 30px;
+  vertical-align: top;
+}
+.date-time {
+  font-size: 16px;
+}
+.week-weather img {
+  width: 55px;
+  display: block;
+  margin: 0 auto;
+}
+.precise-weather {
+  font-size: 12px;
+}
+.search-button {
+  background-color: #8ebac4;
+  border: 1px solid #8ebac4;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease-in-out;
+}
+.search-button:hover {
+  background-color: #546c77;
+  border: 1px solid #546c77;
+}
+#current-location-button {
+  background-color: #bedfe6;
+  border: 1px solid#bedfe6;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease-in-out;
+}
+#current-location-button:hover {
+  background-color: #546c77;
+  border: 1px solid #546c77;
+}
+.city-bar {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.current-temperature {
+  text-align: right;
+  margin-right: 0;
+}
+.temperature {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+a:visited {
+  text-decoration: none;
+}
+#celsius {
+  text-decoration: none;
+  color: #8ebac4;
+}
+#fahrenheit {
+  text-decoration: none;
+  color: #8ebac4;
+}
+
+.celsiusClick {
+  color: black !important;
+}
+.fahrenheitClick {
+  color: black !important;
+}
+.signature {
+  text-align: center;
+  font-size: 12px;
+  margin-top: -35px;
+}
