@@ -121,8 +121,12 @@ a:visited {
   font-size: 12px;
   margin-top: -35px;
 }
-.gitlink {
+.gitLink {
   text-decoration: none;
   color: rgb(125, 162, 177);
+  cursor: pointer;
+}
+.myWebsite {
+  text-decoration: none;
   cursor: pointer;
 }
