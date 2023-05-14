@@ -14,6 +14,12 @@ function showTemperature(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed * 3.6)}km/h`;
 
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   function convertToCelsius(event) {
     event.preventDefault();
     temperature.innerHTML = Math.round(response.data.main.temp);
@@ -84,3 +90,4 @@ currentDate.innerHTML = `${day}, ${hours}:${minutes}`;
 let celsius = document.querySelector("#celsius");
 let fahrenheit = document.querySelector("#fahrenheit");
 let temperature = document.querySelector("#temperature-value");
+let iconElement = document.querySelector("#icon");
