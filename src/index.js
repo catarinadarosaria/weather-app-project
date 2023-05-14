@@ -91,3 +91,24 @@ let celsius = document.querySelector("#celsius");
 let fahrenheit = document.querySelector("#fahrenheit");
 let temperature = document.querySelector("#temperature-value");
 let iconElement = document.querySelector("#icon");
+
+const icons = {
+  "01d.png": "sun.png",
+  "02d.png": "sun-cloud.png",
+  "03d.png": "cloud.png",
+  "04d.png": "clouds.png",
+  "09d.png": "rain.png",
+  "10d.png": "sun_rain.png",
+  "11d.png": "storm-rain.png",
+  "13d.png": "snow.png",
+  "50d.png": "windy.png",
+  "01n.png": "night.png",
+  "02n.png": "night_cloud.png",
+  "03n.png": "cloud.png",
+  "04n.png": "clouds.png",
+  "09n.png": "rain.png",
+  "10n.png": "night_rain.png",
+  "11n.png": "night_thunder.png",
+  "13n.png": "snow.png",
+  "50n.png": "night_wind.png",
+};
