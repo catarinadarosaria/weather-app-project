@@ -1,6 +1,6 @@
 body {
   font-family: "DM Sans", sans-serif;
-  background-color: rgb(234, 249, 250);
+  background-color: rgb(162, 212, 247);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -66,24 +66,24 @@ h3 {
   font-size: 12px;
 }
 .search-button {
-  background-color: #8ebac4;
-  border: 1px solid #8ebac4;
+  background-color: rgb(95, 162, 214);
+  border: 1px solid rgb(95, 162, 214);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 200ms ease-in-out;
 }
 .search-button:hover {
-  background-color: #546c77;
-  border: 1px solid #546c77;
+  background-color: rgb(53, 112, 158);
+  border: 1px solid rgb(53, 112, 158);
 }
 #current-location-button {
-  background-color: #bedfe6;
-  border: 1px solid#bedfe6;
+  background-color: rgb(162, 212, 247);
+  border: 1px solid rgb(162, 212, 247);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 200ms ease-in-out;
 }
 #current-location-button:hover {
-  background-color: #546c77;
-  border: 1px solid #546c77;
+  background-color: rgb(106, 186, 243);
+  border: 1px solid rgb(106, 186, 243);
 }
 .city-bar {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
