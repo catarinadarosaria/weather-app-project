@@ -1,3 +1,5 @@
+let localIcon;
+
 function showTemperature(response) {
   console.log(response);
   let cityName = document.querySelector("h1");
@@ -35,10 +37,9 @@ function showTemperature(response) {
     "13n.png": "snow.png",
     "50n.png": "night_wind.png",
   };
-  const apiIconCode = response.data.weather[0].icon.slice(0, -1);
-  const localIcon = iconMapping[apiIconCode];
 
-  let iconElement = document.querySelector("#icon");
+  const apiIconCode = response.data.weather[0].icon.slice(0, -1);
+  localIcon = iconMapping[apiIconCode]; // Assign a value to the global localIcon variable
   iconElement.src = `images/${localIcon}`;
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
@@ -53,7 +54,7 @@ function showTemperature(response) {
 
   function convertToFahrenheit(event) {
     event.preventDefault();
-    temperature.innerHTML = Math.round(response.data.main.temp * 1.8) + 32;
+    temperatureValue.innerHTML = Math.round(response.data.main.temp * 1.8) + 32;
     fahrenheit.classList.add("fahrenheitClick");
     celsius.classList.remove("celsiusClick");
   }
@@ -113,5 +114,3 @@ let celsius = document.querySelector("#celsius");
 let fahrenheit = document.querySelector("#fahrenheit");
 let temperature = document.querySelector("#temperature-value");
 let iconElement = document.querySelector("#icon");
-
-console.log(localIcon);
