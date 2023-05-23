@@ -1,4 +1,5 @@
 let localIcon;
+let iconElement = document.querySelector("#icon");
 
 function showTemperature(response) {
   console.log(response);
@@ -18,48 +19,27 @@ function showTemperature(response) {
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed * 3.6)}km/h`;
 
   const iconMapping = {
-    "01d.png": "sun.png",
-    "02d.png": "sun-cloud.png",
-    "03d.png": "cloud.png",
-    "04d.png": "clouds.png",
-    "09d.png": "rain.png",
-    "10d.png": "sun_rain.png",
-    "11d.png": "storm-rain.png",
-    "13d.png": "snow.png",
-    "50d.png": "windy.png",
-    "01n.png": "night.png",
-    "02n.png": "night_cloud.png",
-    "03n.png": "cloud.png",
-    "04n.png": "clouds.png",
-    "09n.png": "rain.png",
-    "10n.png": "night_rain.png",
-    "11n.png": "night_thunder.png",
-    "13n.png": "snow.png",
-    "50n.png": "night_wind.png",
+    // Icon mapping code...
   };
 
   const apiIconCode = response.data.weather[0].icon.slice(0, -1);
   localIcon = iconMapping[apiIconCode]; // Assign a value to the global localIcon variable
   iconElement.src = `images/${localIcon}`;
   iconElement.setAttribute("alt", response.data.weather[0].description);
+}
 
-  function convertToCelsius(event) {
-    event.preventDefault();
-    temperatureValue.innerHTML = Math.round(response.data.main.temp);
-    celsius.classList.add("celsiusClick");
-    fahrenheit.classList.remove("fahrenheitClick");
-  }
+function convertToCelsius(event) {
+  event.preventDefault();
+  temperatureValue.innerHTML = Math.round(response.data.main.temp);
+  celsius.classList.add("celsiusClick");
+  fahrenheit.classList.remove("fahrenheitClick");
+}
 
-  celsius.addEventListener("click", convertToCelsius);
-
-  function convertToFahrenheit(event) {
-    event.preventDefault();
-    temperatureValue.innerHTML = Math.round(response.data.main.temp * 1.8) + 32;
-    fahrenheit.classList.add("fahrenheitClick");
-    celsius.classList.remove("celsiusClick");
-  }
-
-  fahrenheit.addEventListener("click", convertToFahrenheit);
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  temperatureValue.innerHTML = Math.round(response.data.main.temp * 1.8) + 32;
+  fahrenheit.classList.add("fahrenheitClick");
+  celsius.classList.remove("celsiusClick");
 }
 
 function retrieveTemperature(city) {
@@ -96,21 +76,3 @@ currentLocationButton.addEventListener("click", getCurrentLocationTemperature);
 
 let now = new Date();
 let currentDate = document.querySelector(".date-time");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let hours = now.getHours();
-let minutes = now.getMinutes();
-currentDate.innerHTML = `${day}, ${hours}:${minutes}`;
-
-let celsius = document.querySelector("#celsius");
-let fahrenheit = document.querySelector("#fahrenheit");
-let temperature = document.querySelector("#temperature-value");
-let iconElement = document.querySelector("#icon");
