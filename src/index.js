@@ -113,3 +113,5 @@ let celsius = document.querySelector("#celsius");
 let fahrenheit = document.querySelector("#fahrenheit");
 let temperature = document.querySelector("#temperature-value");
 let iconElement = document.querySelector("#icon");
+
+console.log(localIcon);
