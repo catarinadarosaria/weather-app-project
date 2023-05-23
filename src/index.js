@@ -15,8 +15,6 @@ function showTemperature(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed * 3.6)}km/h`;
 
-  iconElement.setAttribute("src", `images/${localIcon}`);
-  iconElement.setAttribute("alt", response.data.weather[0].description);
   const iconMapping = {
     "01d.png": "sun.png",
     "02d.png": "sun-cloud.png",
@@ -24,7 +22,7 @@ function showTemperature(response) {
     "04d.png": "clouds.png",
     "09d.png": "rain.png",
     "10d.png": "sun_rain.png",
-    "11d.png": "storm.png",
+    "11d.png": "storm-rain.png",
     "13d.png": "snow.png",
     "50d.png": "windy.png",
     "01n.png": "night.png",
@@ -39,10 +37,14 @@ function showTemperature(response) {
   };
   const apiIconCode = response.data.weather[0].icon.slice(0, -1);
   const localIcon = iconMapping[apiIconCode];
+
+  let iconElement = document.querySelector("#icon");
   iconElement.src = `images/${localIcon}`;
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   function convertToCelsius(event) {
     event.preventDefault();
-    temperature.innerHTML = Math.round(response.data.main.temp);
+    temperatureValue.innerHTML = Math.round(response.data.main.temp);
     celsius.classList.add("celsiusClick");
     fahrenheit.classList.remove("fahrenheitClick");
   }
