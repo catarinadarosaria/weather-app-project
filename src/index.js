@@ -24,7 +24,7 @@ function showTemperature(response) {
     "04d.png": "clouds.png",
     "09d.png": "rain.png",
     "10d.png": "sun_rain.png",
-    "11d.png": "storm-rain.png",
+    "11d.png": "storm.png",
     "13d.png": "snow.png",
     "50d.png": "windy.png",
     "01n.png": "night.png",
