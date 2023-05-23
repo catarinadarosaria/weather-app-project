@@ -16,7 +16,7 @@ function showTemperature(response) {
 
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   const iconMapping = {
