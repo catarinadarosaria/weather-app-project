@@ -15,8 +15,8 @@ function showTemperature(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed * 3.6)}km/h`;
 
-  icon.setAttribute("src", `images/${localIcon}`);
-  icon.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("src", `images/${localIcon}`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   const iconMapping = {
     "01d.png": "sun.png",
     "02d.png": "sun-cloud.png",
