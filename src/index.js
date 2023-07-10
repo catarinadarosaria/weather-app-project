@@ -87,3 +87,5 @@ currentLocationButton.addEventListener("click", getCurrentLocationTemperature);
 
 let now = new Date();
 let currentDate = document.querySelector(".date-time");
+
+search("Lille");
