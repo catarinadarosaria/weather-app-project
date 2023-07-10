@@ -47,16 +47,22 @@ function showTemperature(response) {
 
 function convertToCelsius(event) {
   event.preventDefault();
-  temperatureValue.innerHTML = Math.round(response.data.main.temp);
-  celsius.classList.add("celsiusClick");
-  fahrenheit.classList.remove("fahrenheitClick");
+  let temperatureValue = document.querySelector("#temperature-value");
+  temperatureValue.innerHTML = Math.round(
+    ((parseInt(temperatureValue.innerHTML) - 32) * 5) / 9
+  );
+  celsiusButton.classList.add("celsiusClick");
+  fahrenheitButton.classList.remove("fahrenheitClick");
 }
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  temperatureValue.innerHTML = Math.round(response.data.main.temp * 1.8) + 32;
-  fahrenheit.classList.add("fahrenheitClick");
-  celsius.classList.remove("celsiusClick");
+  let temperatureValue = document.querySelector("#temperature-value");
+  temperatureValue.innerHTML = Math.round(
+    (parseInt(temperatureValue.innerHTML) * 9) / 5 + 32
+  );
+  fahrenheitButton.classList.add("fahrenheitClick");
+  celsiusButton.classList.remove("celsiusClick");
 }
 
 function retrieveTemperature(city) {
@@ -90,6 +96,12 @@ searchTemperature.addEventListener("submit", function (event) {
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocationTemperature);
+
+let celsiusButton = document.querySelector("#celsius");
+celsiusButton.addEventListener("click", convertToCelsius);
+
+let fahrenheitButton = document.querySelector("#fahrenheit");
+fahrenheitButton.addEventListener("click", convertToFahrenheit);
 
 let now = new Date();
 let currentDate = document.querySelector(".date-time");
