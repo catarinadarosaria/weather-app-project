@@ -101,11 +101,11 @@ h3 {
 a:visited {
   text-decoration: none;
 }
-#celsius {
+#celsius-link {
   text-decoration: none;
   color: #8ebac4;
 }
-#fahrenheit {
+#fahrenheit-link {
   text-decoration: none;
   color: #8ebac4;
 }
