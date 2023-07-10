@@ -26,19 +26,31 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function convertToCelsius(event) {
+function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  temperatureValue.innerHTML = Math.round(response.data.main.temp);
-  celsius.classList.add("celsiusClick");
-  fahrenheit.classList.remove("fahrenheitClick");
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function convertToFahrenheit(event) {
+function displayCelsiusTemperature(event) {
   event.preventDefault();
-  temperatureValue.innerHTML = Math.round(response.data.main.temp * 1.8) + 32;
-  fahrenheit.classList.add("fahrenheitClick");
-  celsius.classList.remove("celsiusClick");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function retrieveTemperature(city) {
   let apiKey = "7746bdeabca928cfedcad71e52fd9d66";
