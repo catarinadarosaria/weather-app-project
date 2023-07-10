@@ -22,6 +22,7 @@
   <body>
     <div class="container">
       <div class="weather-app">
+        <!-- search engine-->
         <form id="search-form" class="mb-3 search-bar">
           <div class="row">
             <div class="col-8">
@@ -53,6 +54,7 @@
         <div class="weather-info">
           <div class="header">
             <div class="row">
+              <!-- left block-->
               <div class="col-4 text-left">
                 <h1>Lille</h1>
                 <p class="date-time">Sunday, 17:13</p>
@@ -63,6 +65,7 @@
                 </ul>
               </div>
               <div class="col-4 current-weather text-center">
+                <!-- main icon-->
                 <img
                   src="images/sun-cloud.png"
                   alt="Icon - Sun with clouds"
@@ -70,6 +73,7 @@
                 />
               </div>
               <div class="col-4 current-temperature text-right">
+                <!-- right block-->
                 <div>
                   <span class="temperature" id="temperature-value">13</span>
                   <span class="units"
@@ -81,11 +85,12 @@
             </div>
           </div>
 
-          <div class="week-weather row">
+          <div class="weather-forecast">
+            <!-- forecast-->
             <div class="col-2">
-              <div class="week-data week-day">Mon</div>
-              <img src="images/sun.png" alt="Image 1" />
-              <div class="week-data daily-temperature">
+              <div class="weather-forecast-date">Mon</div>
+              <img src="images/sun.png" alt="" />
+              <div class="weather-forecast-temperatures">
                 <strong>9º</strong>/2º
               </div>
             </div>
@@ -93,42 +98,13 @@
               <div class="week-data week-day">Tue</div>
               <img src="images/sun-cloud.png" alt="Image 2" />
               <div class="week-data daily-temperature">
-                <strong>10º</strong>/0º
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="week-data week-day">Wed</div>
-              <img src="images/sun-cloud.png" alt="Image 3" />
-              <div class="week-data daily-temperature">
-                <strong>17º</strong>/6º
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="week-data week-day">Thu</div>
-              <img src="images/cloud.png" alt="Image 4" />
-              <div class="week-data daily-temperature">
-                <strong>15º</strong>/11º
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="week-data week-day">Fri</div>
-              <img src="images/rain.png" alt="Image 5" />
-              <div class="week-data daily-temperature">
-                <strong>12º</strong>/10º
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="week-data week-day">Sat</div>
-              <img src="images/sun.png" alt="Image 6" />
-              <div class="week-data daily-temperature">
-                <strong>12º</strong>/8º
+                <span class="weather-forecast-temperature-max"> 18° </span>
+                <span class="weather-forecast-temperature-min"> 12° </span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <p class="signature">
+<p class="signature">
+      <!-- signature-->
       <a
         class="gitLink"
         href="https://github.com/catarinadarosaria/weather-app-project"
@@ -144,5 +120,6 @@
       >
     </p>
     <script src="src/index.js"></script>
+  </div>
   </body>
 </html>
