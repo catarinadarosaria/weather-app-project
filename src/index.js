@@ -24,6 +24,7 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function displayFahrenheitTemperature(event) {
@@ -46,10 +47,10 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
-let fahrenheitLink = document.querySelector("#fahrenheit");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsius");
+let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function retrieveTemperature(city) {

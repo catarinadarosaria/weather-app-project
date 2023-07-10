@@ -110,12 +110,14 @@ a:visited {
   color: #8ebac4;
 }
 
-.celsiusClick {
-  color: black !important;
+.current-temperature .active {
+  color: black;
+  cursor: default;
 }
-.fahrenheitClick {
-  color: black !important;
+.current-temperature .active:hover {
+  text-decoration: none;
 }
+
 .signature {
   text-align: center;
   font-size: 12px;
