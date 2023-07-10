@@ -113,6 +113,7 @@ a:visited {
 .current-temperature .active {
   color: black;
   cursor: default;
+  text-decoration: none;
 }
 .current-temperature .active:hover {
   text-decoration: none;
