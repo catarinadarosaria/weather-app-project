@@ -28,7 +28,7 @@ function showTemperature(response) {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature-value");
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
@@ -40,16 +40,16 @@ function displayCelsiusTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature-value");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
+let fahrenheitLink = document.querySelector("#fahrenheitClick");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsius-link");
+let celsiusLink = document.querySelector("#celsiusClick");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function retrieveTemperature(city) {
