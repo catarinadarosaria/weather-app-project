@@ -1,6 +1,7 @@
 let localIcon;
 let iconElement = document.querySelector("#icon");
 
+//API call for General Weather Info
 function showTemperature(response) {
   console.log(response);
   let cityName = document.querySelector("h1");
@@ -26,6 +27,8 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
 }
+
+// Fahrenheit and Celsius conversion buttons
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
@@ -53,6 +56,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+// API Call for temperature
 function retrieveTemperature(city) {
   let apiKey = "7746bdeabca928cfedcad71e52fd9d66";
   let units = "metric";
@@ -74,6 +78,7 @@ function getCurrentLocationTemperature() {
   navigator.geolocation.getCurrentPosition(retrieveCurrentLocationTemperature);
 }
 
+//Search Engine for City Temperature
 let searchTemperature = document.querySelector("form");
 searchTemperature.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -82,16 +87,19 @@ searchTemperature.addEventListener("submit", function (event) {
   retrieveTemperature(city);
 });
 
+//Search Engine for Geolocation City
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocationTemperature);
 
+// Current Date
 let now = new Date();
 let currentDate = document.querySelector(".date-time");
 
+//Forecast Construction
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
@@ -115,7 +123,7 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
-search("Lille");
+displayForecast();
+retrieveTemperature("Porto");

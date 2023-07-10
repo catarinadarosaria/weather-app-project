@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
+
   <body>
     <div class="container">
       <div class="weather-app">
@@ -56,12 +57,12 @@
             <div class="row">
               <!-- left block-->
               <div class="col-4 text-left">
-                <h1>Lille</h1>
-                <p class="date-time">Sunday, 17:13</p>
-                <h3>Clouds</h3>
+                <h1></h1>
+                <p class="date-time"></p>
+                <h3></h3>
                 <ul class="precise-weather">
-                  <li id="humidity">Humidity: 20%</li>
-                  <li id="wind">Wind: 20km/h</li>
+                  <li id="humidity"></li>
+                  <li id="wind"></li>
                 </ul>
               </div>
               <div class="col-4 current-weather text-center">
@@ -85,20 +86,12 @@
             </div>
           </div>
 
-          <div class="weather-forecast">
-            <!-- forecast-->
-            <div class="row"></div>
-            <div class="col-2">
-              <div class="weather-forecast-date">Mon</div>
-              <img src="images/sun.png" alt="" />
-              <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-temperature-max"> 18° </span>
-                <span class="weather-forecast-temperature-min"> 12° </span>
-              </div>
-            </div>
-          </div>
+          <!-- forecast-->
+          <div class="weather-forecast" id="forecast"></div>
         </div>
       </div>
+    </div>
+    <div class="description">
       <p class="signature">
         <!-- signature-->
         <a
@@ -111,11 +104,10 @@
           class="myWebsite"
           href="https://catarinadarosaria.com/"
           target="_blank"
-        >
-          <em> Catarina da Rosária</em></a
+          ><em> Catarina da Rosária</em></a
         >
       </p>
-      <script src="src/index.js"></script>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
