@@ -1,7 +1,5 @@
-//Date and Time
+//Function to display Date and Time
 function formatDate(timestamp) {
-  let dateTime = document.querySelector(".date-time");
-  dateTime.innerHTML = `${day} ${hours}:${minutes}`;
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -21,6 +19,7 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
@@ -29,19 +28,23 @@ function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
   return days[day];
 }
 
 //API call for Forecast
 function getForecast(coordinates) {
-  let apiKey = "eff2995d6685ce8bb4f60a2ab4894754";
+  let apiKey = "f3009e4852fa0a079dab291dabf020c4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 //Retreive General info from API
 function showTemperature(response) {
+  let timestamp = response.data.dt * 1000;
+  let dateTime = formatDate(timestamp);
+  let dateTimeElement = document.querySelector(".date-time");
+  dateTimeElement.innerHTML = dateTime;
+
   let cityName = document.querySelector("h1");
   cityName.innerHTML = response.data.name;
 
@@ -143,7 +146,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-      <div class="col-2">
+      <div class="col-2 forecast-column">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
           src="http://openweathermap.org/img/wn/${
