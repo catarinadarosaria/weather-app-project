@@ -63,7 +63,13 @@ function showTemperature(response) {
   let weatherCode = response.data.weather[0].icon;
   let iconElement = document.querySelector("#icon");
 
-  iconElement.setAttribute("src", getIconPath(weatherCode));
+  iconElement.onload = function () {
+    iconElement.style.visibility = "visible";
+  };
+  iconElement.onerror = function () {
+    iconElement.style.visibility = "hidden";
+  };
+  iconElement.src = getIconPath(weatherCode);
 
   celsiusTemperature = response.data.main.temp;
 
