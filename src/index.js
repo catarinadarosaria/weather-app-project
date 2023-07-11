@@ -108,7 +108,7 @@ function retrieveTemperature(city) {
 function retrieveCurrentLocationTemperature(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = "eff2995d6685ce8bb4f60a2ab4894754";
+  let apiKey = "e60cfe91a731d94cdd654022271b22a3";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
