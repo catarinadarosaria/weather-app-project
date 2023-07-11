@@ -1,4 +1,7 @@
+//Date and Time
 function formatDate(timestamp) {
+  let dateTime = document.querySelector(".date-time");
+  dateTime.innerHTML = `${day} ${hours}:${minutes}`;
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -32,8 +35,7 @@ function formatDay(timestamp) {
 
 //API call for Forecast
 function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "7746bdeabca928cfedcad71e52fd9d66";
+  let apiKey = "e60cfe91a731d94cdd654022271b22a3";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -95,7 +97,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 // API call City Search
 function retrieveTemperature(city) {
-  let apiKey = "7746bdeabca928cfedcad71e52fd9d66";
+  let apiKey = "e60cfe91a731d94cdd654022271b22a3";
   let units = "metric";
   let formattedCity = encodeURIComponent(city);
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&appid=${apiKey}&units=${units}`;
@@ -128,10 +130,6 @@ searchTemperature.addEventListener("submit", function (event) {
 //Search Engine for Geolocation City
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocationTemperature);
-
-// Current Date
-let now = new Date();
-let currentDate = document.querySelector(".date-time");
 
 //Forecast Construction
 function displayForecast(response) {
