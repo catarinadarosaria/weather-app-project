@@ -1,9 +1,13 @@
-let localIcon;
-let iconElement = document.querySelector("#icon");
+//API call for Forecast
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "7746bdeabca928cfedcad71e52fd9d66";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
-//API call for General Weather Info
+////API call for General Weather Info
 function showTemperature(response) {
-  console.log(response);
   let cityName = document.querySelector("h1");
   cityName.innerHTML = response.data.name;
 
@@ -26,6 +30,8 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 // Fahrenheit and Celsius conversion buttons
@@ -124,6 +130,4 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
 retrieveTemperature("Porto");
